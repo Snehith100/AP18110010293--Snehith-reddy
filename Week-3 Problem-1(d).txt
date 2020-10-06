@@ -1,0 +1,23 @@
+%{ 
+    #include <stdio.h>
+    int state=0; 
+%} 
+
+%%  
+[0-9]*00 state=1;
+%% 
+int yywrap(){} 
+int main() 
+{ 
+    printf("Enter any text :"); 
+    yylex(); 
+    
+    if(state==0){
+        printf("string  doesn't end with 00");
+        }
+     else{
+         printf("string ends with 00");
+       
+     }
+    return 0; 
+}  

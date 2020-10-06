@@ -1,0 +1,24 @@
+%{ 
+    #include <stdio.h>
+    int state=0; 
+%} 
+
+%%  
+[0-9]*000[0-9]* state=1;
+
+%% 
+int yywrap(){} 
+int main() 
+{ 
+    printf("IEnter any text :"); 
+    yylex(); 
+
+    if(state==0){
+        printf("string does not contain three consecutive 0's (000)");
+        }
+     else{
+         printf("string contains three consecutive 0's (000)");
+       
+     }
+    return 0; 
+}  
