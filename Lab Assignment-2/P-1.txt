@@ -1,0 +1,31 @@
+%{
+#include<stdio.h> 
+#include<string.h> 
+
+%}
+
+s_c \/\* 
+e_c  \*\/ 
+
+%%
+void|main|for|while|if|else|while|int|switch|for|char|auto|break|case {fprintf(yyout,"%s : Keyword\n",yytext);} 
+    
+[-,+]?[0-9]+ {fprintf(yyout,"%s : Integer\n",yytext);}/
+{s_c}.*{e_c} {fprintf(yyout,"%s : comments - To Be Ignored \n", yytext);}
+[<|>|<=|=>|!=]+ {fprintf(yyout,"%s : Relational operator\n",yytext);}
+[a-zA-Z]+ {fprintf(yyout,"%s : Identifiers\n",yytext);}
+%%
+
+
+int main(){
+extern FILE *yyin,*yyout;
+yyin = fopen("input.txt", "r"); 
+yyout = fopen("output.txt", "w");
+
+yylex(); //starting analyzing
+printf("outputs with token and attributes written to output.txt file" );
+	return 0;
+}
+int yywrap(){
+	
+}
