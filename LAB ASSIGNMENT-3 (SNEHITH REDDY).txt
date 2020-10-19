@@ -3,10 +3,7 @@ LAB ASSIGNMENT-3            NAME N.SNEHITH REDDY
                             CSE-E            
 
 
-write a C program for the computation of FIRST and FOLLOW for given CFG
-
-
-                         code 
+write a C program for the computation of FIRST and FOLLOW for all non-terminals in a given grammar G. Assume that G is not left recursive?
 
 
 #include<stdio.h>
