@@ -1,7 +1,4 @@
-LAB ASSIGNMENT-3            NAME N.SNEHITH REDDY
-                            AP18110010293
-                            CSE-E            
-
+LAB ASSIGNMENT-3           
 
 write a C program for the computation of FIRST and FOLLOW for all non-terminals in a given grammar G. Assume that G is not left recursive?
 
